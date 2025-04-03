@@ -1,0 +1,34 @@
+.weather-card {
+  visibility: visible;
+  position: relative;
+  display: flex;
+  height: 80px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.weather-card__temp {
+  font-family: "Cabinet Grotesk Bold";
+  color: #fff;
+  font-size: 36px;
+  line-height: 40px;
+  margin: 0;
+  position: absolute;
+  top: 20px;
+  left: 16px;
+}
+
+.weather-card__image {
+  margin: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: right top;
+}
+
+@media screen and (max-width: 627px) {
+  .weather-card.weather-card_closed {
+    visibility: hidden !important;
+    width: 0;
+    height: 0;
+  }
+}

@@ -1,0 +1,19 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 85px 0 0;
+  padding-bottom: 24px;
+  font-family: "Cabinet Grotesk", Helvetica, sans-serif;
+  font-weight: 500;
+  color: #000;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.footer__credits {
+  margin: 0;
+}
+
+.footer__year {
+  margin: 0;
+}

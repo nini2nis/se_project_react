@@ -1,0 +1,41 @@
+.card {
+  position: relative;
+  max-width: 323px;
+  display: flex;
+  justify-content: center;
+}
+
+.card__name {
+  position: absolute;
+  top: 15px;
+  margin: 0;
+  background-color: #fff;
+  font-family: "Cabinet Grotesk", Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  border-radius: 4px;
+  padding: 2px 12px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.card__image {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 627px) {
+  .card {
+    max-width: 164px;
+  }
+
+  .card__name {
+    top: 7px;
+    font-weight: 700;
+  }
+
+  .card__image {
+    border-radius: 15px;
+  }
+}
