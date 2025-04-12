@@ -28,6 +28,7 @@ function App() {
   const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleToggleSwitchChange = () => {
     setCurrentTemperatureUnit(currentTemperatureUnit === "F" ? "C" : "F");
@@ -46,17 +47,35 @@ function App() {
     setActiveModal("");
   };
 
+  useEffect(() => {
+    if (!activeModal) return;
+    const handleEscClose = (evt) => {
+      if (evt.key === "Escape") {
+        closeActiveModal();
+      }
+    };
+    document.addEventListener("keydown", handleEscClose);
+    return () => {
+      document.removeEventListener("keydown", handleEscClose);
+    };
+  }, [activeModal]);
+
   function toggleMobileMenu() {
     setIsMobileMenuOpened(!isMobileMenuOpened);
   }
 
   const handleAddItemSubmit = (itemData) => {
+    setIsLoading(true);
     addNewItem(itemData)
       .then((newItem) => {
         setClothingItems([newItem, ...clothingItems]);
         closeActiveModal();
+        setIsLoading(false);
       })
-      .catch(console.error);
+      .catch((error) => {
+        console.error(error);
+        setIsLoading(false);
+      });
   };
 
   const handleDeleteClick = () => {
@@ -78,7 +97,7 @@ function App() {
         const filteredData = filteredWeatherData(data);
         setWeatherData(filteredData);
       })
-      .catch(console.err);
+      .catch(console.error);
   }, []);
 
   useEffect(() => {
@@ -130,7 +149,7 @@ function App() {
         <AddItemModal
           name="add-garment"
           activeModal={activeModal}
-          buttonText="Save"
+          buttonText={isLoading ? "Saving..." : "Save"}
           onClose={closeActiveModal}
           onAddItemSubmit={handleAddItemSubmit}
         />
