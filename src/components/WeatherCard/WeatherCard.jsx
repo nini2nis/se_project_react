@@ -4,6 +4,8 @@ import { useContext } from "react";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 
 function WeatherCard({ weatherData, isMobileMenuOpened }) {
+  const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
+
   const filteredOptions = weatherOptions.filter((option) => {
     return (
       option.day === weatherData.isDay &&
@@ -17,8 +19,6 @@ function WeatherCard({ weatherData, isMobileMenuOpened }) {
   } else {
     weatherOption = filteredOptions[0];
   }
-
-  const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
 
   return (
     <section
