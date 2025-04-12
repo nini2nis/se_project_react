@@ -1,5 +1,5 @@
 import "./Header.css";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import logo from "../../assets/logo.png";
@@ -44,9 +44,9 @@ function Header({
           isMobileMenuOpened ? "header__container-date-location_closed" : ""
         }`}
       >
-        <NavLink to="/">
+        <Link to="/">
           <img className="header__logo" src={logo} alt="logo" />
-        </NavLink>
+        </Link>
         <p className="header__date-location">
           {currentDate}, {weatherData.city}
         </p>
@@ -70,15 +70,15 @@ function Header({
         >
           + Add Clothes
         </button>
-        <NavLink
-          to="/Profile"
+        <Link
+          to="/profile"
           className={`header__user-container ${
             isMobileMenuOpened ? "header__user-container_opened" : ""
           }`}
         >
           <p className="header__username">Terrence Tegegne</p>
           <img className="header__avatar" src={avatar} alt="avatar" />
-        </NavLink>
+        </Link>
       </div>
     </header>
   );
