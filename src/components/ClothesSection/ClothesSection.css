@@ -1,0 +1,60 @@
+.clothes-section {
+  margin: 0;
+  padding: 0;
+}
+
+.clothes-section__text-container {
+  display: flex;
+  margin: 16px 0 15px;
+  gap: 20px;
+}
+
+.clothes-section__useritems {
+  font-family: "Cabinet Grotesk Bold";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1;
+  color: #000;
+  margin: 0;
+}
+
+.clothes-section__add-button {
+  border: none;
+  background-color: transparent;
+  color: #000;
+  opacity: 60%;
+  font-family: "Cabinet Grotesk Bold";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1;
+  padding: 0;
+}
+
+.clothes-section__add-button:hover {
+  opacity: 100%;
+}
+
+.clothes-section__cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  gap: 21px;
+}
+
+@media screen and (max-width: 627px) {
+  .clothes-section {
+    margin: 20px 0 0;
+  }
+
+  .clothes-section__text-container {
+    max-width: 343px;
+    justify-content: space-between;
+    margin: 20px 0 16px;
+  }
+
+  .clothes-section__cards {
+    gap: 15px;
+  }
+}

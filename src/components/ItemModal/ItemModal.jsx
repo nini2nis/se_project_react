@@ -1,21 +1,32 @@
 import "./ItemModal.css";
+import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-function ItemModal({ activeModal, onClose, card }) {
+function ItemModal({ activeModal, onClose, card, buttonText, onDeleteClick }) {
   return (
-    <div className={`modal ${activeModal === "preview" && "modal_opened"}`}>
-      <div className="modal__container_type_image">
-        <button
-          onClick={onClose}
-          className="modal__close-button"
-          type="button"
-        ></button>
-        <img src={card.link} alt={card.name} className="modal__image" />
+    <>
+      <ModalWithForm
+        name="preview"
+        activeModal={activeModal}
+        onClose={onClose}
+        containerClassName="modal__container_type_image"
+      >
+        <img src={card.imageUrl} alt={card.name} className="modal__image" />
         <div className="modal__footer">
-          <h2 className="modal__caption">{card.name}</h2>
+          <div className="modal__footer-top">
+            <h2 className="modal__caption">{card.name}</h2>
+            <button
+              className="modal__item-delete"
+              type="button"
+              onClick={onDeleteClick}
+            >
+              {buttonText}
+            </button>
+          </div>
           <p className="modal__weather">Weather: {card.weather}</p>
         </div>
-      </div>
-    </div>
+      </ModalWithForm>
+    </>
   );
 }
+
 export default ItemModal;

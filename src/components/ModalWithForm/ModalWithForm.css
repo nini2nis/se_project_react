@@ -35,6 +35,7 @@
   max-width: 496px;
   box-sizing: border-box;
   width: 100%;
+  margin: 0 auto;
 }
 
 .modal__close-button {
@@ -103,44 +104,6 @@
   /*IMPLEMENT LATER
   opacity: 1;
   margin: ;*/
-}
-
-.modal__legend {
-  margin: 0 0 12px;
-}
-
-.modal__radio-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  border: none;
-  padding: 0;
-  margin: 0;
-}
-
-.modal__label-radio {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-end;
-  gap: 8px;
-  opacity: 50%;
-}
-
-.modal__label-radio:has(.modal__radio-input:checked) {
-  opacity: 1;
-  color: black;
-}
-
-.modal__radio-input {
-  margin: 0;
-  opacity: 50%;
-  width: 16px;
-  height: 16px;
-}
-
-.modal__radio-input:focus {
-  opacity: 1;
-  accent-color: #000;
 }
 
 .modal__submit-button {

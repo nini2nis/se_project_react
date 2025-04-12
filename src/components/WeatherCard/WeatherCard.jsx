@@ -1,8 +1,9 @@
 import "./WeatherCard.css";
 import { weatherOptions, defaultWeatherOptions } from "../../utils/Constants";
+import { useContext } from "react";
+import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 
 function WeatherCard({ weatherData, isMobileMenuOpened }) {
-  console.log("Mobile menu opened:", isMobileMenuOpened);
   const filteredOptions = weatherOptions.filter((option) => {
     return (
       option.day === weatherData.isDay &&
@@ -17,13 +18,17 @@ function WeatherCard({ weatherData, isMobileMenuOpened }) {
     weatherOption = filteredOptions[0];
   }
 
+  const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
+
   return (
     <section
       className={`weather-card ${
         isMobileMenuOpened ? "weather-card_closed" : ""
       }`}
     >
-      <p className="weather-card__temp">{weatherData.temp.F}&deg;</p>
+      <p className="weather-card__temp">
+        {weatherData.temp[currentTemperatureUnit]}&deg; {currentTemperatureUnit}
+      </p>
       <img
         className="weather-card__image"
         src={weatherOption?.url}

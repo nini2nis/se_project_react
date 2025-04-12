@@ -1,10 +1,17 @@
 import "./Main.css";
 import WeatherCard from "../WeatherCard/WeatherCard";
-import { defaultClothingItems } from "../../utils/Constants";
 import ItemCard from "../ItemCard/ItemCard";
 import randomizeIcon from "../../assets/randomize.png";
+import { useContext } from "react";
+import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 
-function Main({ weatherData, handleCardClick, isMobileMenuOpened }) {
+function Main({
+  weatherData,
+  handleCardClick,
+  isMobileMenuOpened,
+  clothingItems,
+}) {
+  const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
   return (
     <main className="main">
       <WeatherCard
@@ -13,10 +20,11 @@ function Main({ weatherData, handleCardClick, isMobileMenuOpened }) {
       />
       <section className="cards">
         <p className="cards__text">
-          Today is {weatherData.temp.F}&deg;/ You might want to wear:
+          Today is {weatherData.temp[currentTemperatureUnit]}&deg;{" "}
+          {currentTemperatureUnit}/ You might want to wear:
         </p>
         <ul className="cards__list">
-          {defaultClothingItems
+          {clothingItems
             .filter((item) => {
               return item.weather === weatherData.type;
             })

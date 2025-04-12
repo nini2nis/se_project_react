@@ -4,8 +4,7 @@
 }
 
 .cards {
-  margin: 40px 0 85px;
-  padding: 0;
+  margin: 40px 0 0px;
 }
 
 .cards__text {
@@ -18,8 +17,9 @@
 .cards__list {
   display: flex;
   flex-wrap: wrap;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+  justify-content: center;
   list-style-type: none;
   gap: 21px;
 }
@@ -34,7 +34,7 @@
 
 @media screen and (max-width: 627px) {
   .cards {
-    margin: 20px 0 83px;
+    margin: 20px 0 0;
     padding: 0;
   }
 
@@ -48,6 +48,7 @@
   .cards__list {
     display: flex;
     flex-wrap: wrap;
+
     margin: 0;
     padding: 0;
     list-style-type: none;
@@ -69,6 +70,7 @@
   }
 
   .cards__randomize-icon {
+    visibility: visible;
     margin-right: 8px;
   }
 }

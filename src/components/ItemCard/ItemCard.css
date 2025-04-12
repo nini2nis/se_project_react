@@ -1,6 +1,8 @@
 .card {
   position: relative;
-  max-width: 323px;
+  width: 323px;
+  height: 323px;
+  overflow: hidden;
   display: flex;
   justify-content: center;
 }
@@ -27,7 +29,8 @@
 
 @media screen and (max-width: 627px) {
   .card {
-    max-width: 164px;
+    width: 164px;
+    height: 164px;
   }
 
   .card__name {

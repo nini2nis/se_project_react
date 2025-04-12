@@ -1,4 +1,7 @@
 import "./Header.css";
+import { Link } from "react-router-dom";
+
+import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import logo from "../../assets/logo.png";
 import avatar from "../../assets/avatar.png";
 import menuIcon from "../../assets/menu-icon.png";
@@ -23,9 +26,17 @@ function Header({
         className="header__mobile-menu-btn"
       >
         {isMobileMenuOpened ? (
-          <img src={closeIcon} alt="close" className="header__mobile-close" />
+          <img
+            src={closeIcon}
+            alt="close"
+            className="header__mobile-menu-close-btn"
+          />
         ) : (
-          <img src={menuIcon} alt="open" className="header__mobile-open" />
+          <img
+            src={menuIcon}
+            alt="open"
+            className="header__mobile-menu-open-btn"
+          />
         )}
       </button>
       <div
@@ -33,7 +44,9 @@ function Header({
           isMobileMenuOpened ? "header__container-date-location_closed" : ""
         }`}
       >
-        <img className="header__logo" src={logo} alt="logo" />
+        <Link to="/">
+          <img className="header__logo" src={logo} alt="logo" />
+        </Link>
         <p className="header__date-location">
           {currentDate}, {weatherData.city}
         </p>
@@ -43,6 +56,11 @@ function Header({
           isMobileMenuOpened ? "header__container-menu_opened" : ""
         }`}
       >
+        <ToggleSwitch
+          handleToggleSwitchChange={() =>
+            setCurrentTemperatureUnit(currentTemperatureUnit)
+          }
+        />
         <button
           onClick={handleAddClick}
           type="button"
@@ -52,14 +70,15 @@ function Header({
         >
           + Add Clothes
         </button>
-        <div
+        <Link
+          to="/Profile"
           className={`header__user-container ${
             isMobileMenuOpened ? "header__user-container_opened" : ""
           }`}
         >
           <p className="header__username">Terrence Tegegne</p>
           <img className="header__avatar" src={avatar} alt="avatar" />
-        </div>
+        </Link>
       </div>
     </header>
   );

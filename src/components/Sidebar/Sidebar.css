@@ -1,0 +1,109 @@
+.sidebar {
+  width: 300px;
+  margin: 0 40px 0 0;
+}
+
+.sidebar__content {
+  display: flex;
+  gap: 16px;
+}
+
+.sidebar__avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+}
+
+.sidebar__username {
+  font-family: "Cabinet Grotesk Bold";
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 700;
+  color: #000;
+  margin: 16px 0 20px;
+  text-wrap: nowrap;
+  padding: 0;
+}
+
+.sidebar__change-profile {
+  border: none;
+  background-color: transparent;
+  color: #000;
+  opacity: 60%;
+  font-family: "Cabinet Grotesk Bold";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+  padding: 0;
+  margin: 0 0 12px 0;
+}
+
+.sidebar__change-profile:hover {
+  opacity: 1;
+}
+
+.sidebar__logout {
+  border: none;
+  background-color: transparent;
+  color: #000;
+  opacity: 60%;
+  font-family: "Cabinet Grotesk Bold";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+  padding: 0;
+}
+
+.sidebar__logout:hover {
+  opacity: 1;
+}
+
+@media screen and (max-width: 627px) {
+  .sidebar {
+    width: 343px;
+    margin: 0;
+    visibility: visible;
+  }
+
+  .sidebar_closed {
+    display: none;
+  }
+
+  .sidebar__content {
+    flex-direction: row;
+  }
+
+  .sidebar__line-top {
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 1px;
+    margin: 0 0 20px 0;
+  }
+
+  .sidebar__functionalities {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sidebar__username {
+    font-size: 24px;
+    margin: 0 0 12px 0;
+  }
+
+  .sidebar__change-profile {
+    font-size: 20px;
+    margin: 0 0 8px 0;
+  }
+
+  .sidebar__logout {
+    font-size: 20px;
+  }
+
+  .sidebar__line-bottom {
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 1px;
+    margin: 20px 0 0 0;
+  }
+}
