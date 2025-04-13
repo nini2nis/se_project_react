@@ -30,4 +30,4 @@ function removeItem(_id) {
   }).then(_checkResponse);
 }
 
-export { getInitialItems, addNewItem, removeItem };
+export { _checkResponse, getInitialItems, addNewItem, removeItem };

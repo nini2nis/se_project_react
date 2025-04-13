@@ -26,10 +26,11 @@ const AddItemModal = ({
 
   const handleItemSubmit = (evt) => {
     evt.preventDefault();
-    onAddItemSubmit({ name, imageUrl, weather });
-    setName("");
-    setImageUrl("");
-    setWeather("");
+    onAddItemSubmit({ name, imageUrl, weather }).then(() => {
+      setName("");
+      setImageUrl("");
+      setWeather * "";
+    });
   };
 
   return (
