@@ -70,12 +70,11 @@ function App() {
       .then((newItem) => {
         setClothingItems([newItem, ...clothingItems]);
         closeActiveModal();
-        setIsLoading(false);
       })
       .catch((error) => {
         console.error(error);
-        setIsLoading(false);
-      });
+      })
+      .finally(() => setIsLoading(false));
   };
 
   const handleDeleteClick = () => {
