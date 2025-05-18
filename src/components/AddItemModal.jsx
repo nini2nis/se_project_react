@@ -47,12 +47,12 @@ const AddItemModal = ({
       name="add-garment"
       containerClassName="modal__container"
     >
-      <label className="modal__label" htmlFor="name">
+      <label className="modal__label" htmlFor="item-name">
         Name
         <input
           className="modal__input"
           type="text"
-          id="name"
+          id="item-name"
           name="name"
           placeholder="Name"
           minLength="2"

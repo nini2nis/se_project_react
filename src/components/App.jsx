@@ -360,13 +360,19 @@ function App() {
             onClose={closeActiveModal}
             onConfirm={() => handleDeleteItem(selectedCard._id)}
           />
-          <EditProfileModal
-            name="edit-profile"
-            activeModal={activeModal}
-            onClose={closeActiveModal}
-            buttonText={isLoading ? "Saving..." : "Save changes"}
-            onProfileChangeSubmit={handleProfileChange}
-          ></EditProfileModal>
+          {currentUser && (
+            <EditProfileModal
+              name="edit-profile"
+              activeModal={activeModal}
+              onClose={closeActiveModal}
+              buttonText={isLoading ? "Saving..." : "Save changes"}
+              onProfileChangeSubmit={handleProfileChange}
+              profileData={{
+                name: currentUser.name,
+                avatar: currentUser.avatar,
+              }}
+            />
+          )}
         </div>
       </CurrentTemperatureUnitContext.Provider>
     </CurrentUserContext.Provider>

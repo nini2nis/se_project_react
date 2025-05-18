@@ -42,30 +42,32 @@ const LoginModal = ({
       name="login"
       containerClassName="modal__container"
     >
-      <label className="modal__label" htmlFor="email">
+      <label className="modal__label" htmlFor="login-email">
         Email
         <input
           className="modal__input"
           type="email"
-          id="email"
+          id="login-email"
           name="email"
           placeholder="Email"
           value={data.email}
           onChange={handleChange}
+          autoComplete="username"
           required
         />
         <span className="name-error modal__input-error" id="name-error"></span>
       </label>
-      <label className="modal__label" htmlFor="password">
+      <label className="modal__label" htmlFor="login-password">
         Password
         <input
           className="modal__input"
           type="password"
-          id="password"
+          id="login-password"
           name="password"
           placeholder="Password"
           value={data.password}
           onChange={handleChange}
+          autoComplete="current-password"
           required
         />
         <span className="name-error modal__input-error" id="name-error"></span>

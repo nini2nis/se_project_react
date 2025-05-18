@@ -45,42 +45,44 @@ const RegisterModal = ({
       name="signup"
       containerClassName="modal__container"
     >
-      <label className="modal__label" htmlFor="email">
+      <label className="modal__label" htmlFor="register-email">
         Email*
         <input
           className="modal__input"
           type="email"
-          id="email"
+          id="register-email"
           name="email"
           placeholder="Email"
           value={data.email}
           onChange={handleChange}
+          autoComplete="username"
           required
         />
         <span className="name-error modal__input-error" id="name-error"></span>
       </label>
-      <label className="modal__label" htmlFor="password">
+      <label className="modal__label" htmlFor="register-password">
         Password*
         <input
           className="modal__input"
           type="password"
-          id="password"
+          id="register-password"
           name="password"
           placeholder="Password"
           minLength="8"
           maxLength="20"
           value={data.password}
           onChange={handleChange}
+          autoComplete="new-password"
           required
         />
         <span className="name-error modal__input-error" id="name-error"></span>
       </label>
-      <label className="modal__label" htmlFor="name">
+      <label className="modal__label" htmlFor="register-name">
         Name*
         <input
           className="modal__input"
           type="text"
-          id="name"
+          id="register-name"
           name="name"
           placeholder="Name"
           minLength="2"
@@ -91,12 +93,12 @@ const RegisterModal = ({
         />
         <span className="name-error modal__input-error" id="name-error"></span>
       </label>
-      <label className="modal__label" htmlFor="avatar">
+      <label className="modal__label" htmlFor="register-avatar">
         Avatar URL*
         <input
           className="modal__input"
           type="url"
-          id="avatar"
+          id="register-avatar"
           name="avatar"
           placeholder="Avatar URL"
           value={data.avatar}

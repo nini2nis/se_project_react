@@ -7,10 +7,11 @@ const EditProfileModal = ({
   onClose,
   buttonText,
   onProfileChangeSubmit,
+  profileData,
 }) => {
   const [data, setData] = useState({
-    name: "",
-    avatar: "",
+    name: profileData.name,
+    avatar: profileData.avatar,
   });
 
   const handleChange = (evt) => {
@@ -33,12 +34,12 @@ const EditProfileModal = ({
       name="edit-profile"
       containerClassName="modal__container"
     >
-      <label className="modal__label" htmlFor="name">
+      <label className="modal__label" htmlFor="edit-name">
         Name*
         <input
           className="modal__input"
           type="text"
-          id="name"
+          id="edit-name"
           name="name"
           placeholder="Name"
           minLength="2"
@@ -49,12 +50,12 @@ const EditProfileModal = ({
         />
         <span className="name-error modal__input-error" id="name-error"></span>
       </label>
-      <label className="modal__label" htmlFor="avatar">
+      <label className="modal__label" htmlFor="edit-avatar">
         Avatar URL*
         <input
           className="modal__input"
           type="url"
-          id="avatar"
+          id="edit-avatar"
           name="avatar"
           placeholder="Avatar URL"
           value={data.avatar}
