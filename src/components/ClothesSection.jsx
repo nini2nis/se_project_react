@@ -1,7 +1,18 @@
-import "./ClothesSection.css";
-import ItemCard from "../ItemCard/ItemCard";
+import "../styles/ClothesSection.css";
+import ItemCard from "./ItemCard";
 
-function ClothesSection({ clothingItems, handleCardClick, handleAddClick }) {
+function ClothesSection({
+  clothingItems,
+  handleCardClick,
+  handleAddClick,
+  isOwn,
+  currentUser,
+  handleCardLike,
+}) {
+  const filteredItems = isOwn
+    ? clothingItems.filter((item) => item.owner === currentUser._id)
+    : clothingItems;
+
   return (
     <div className="clothes-section">
       <div className="clothes-section__text-container">
@@ -14,12 +25,13 @@ function ClothesSection({ clothingItems, handleCardClick, handleAddClick }) {
         </button>
       </div>
       <ul className="clothes-section__cards">
-        {clothingItems.map((item) => {
+        {filteredItems.map((item) => {
           return (
             <ItemCard
               key={item._id}
               item={item}
               onCardClick={handleCardClick}
+              onLikeClick={handleCardLike}
             />
           );
         })}

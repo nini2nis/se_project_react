@@ -12,6 +12,14 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid;
+}
+
+.sidebar__functionalities {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .sidebar__username {
@@ -25,7 +33,7 @@
   padding: 0;
 }
 
-.sidebar__change-profile {
+.sidebar__first-btn {
   border: none;
   background-color: transparent;
   color: #000;
@@ -38,11 +46,11 @@
   margin: 0 0 12px 0;
 }
 
-.sidebar__change-profile:hover {
+.sidebar__first-btn:hover {
   opacity: 1;
 }
 
-.sidebar__logout {
+.sidebar__second-btn {
   border: none;
   background-color: transparent;
   color: #000;
@@ -54,7 +62,7 @@
   padding: 0;
 }
 
-.sidebar__logout:hover {
+.sidebar__second-btn:hover {
   opacity: 1;
 }
 
@@ -91,12 +99,12 @@
     margin: 0 0 12px 0;
   }
 
-  .sidebar__change-profile {
+  .sidebar__first-btn {
     font-size: 20px;
     margin: 0 0 8px 0;
   }
 
-  .sidebar__logout {
+  .sidebar__second-btn {
     font-size: 20px;
   }
 

@@ -7,8 +7,37 @@
   justify-content: center;
 }
 
-.card__name {
+.card__title-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
   position: absolute;
+  margin: 16px auto 0;
+}
+
+.card__like {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  align-self: center;
+  background-image: url(../assets/LikeButton.png);
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+}
+
+.card__liked {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  align-self: center;
+  background-image: url(../assets/LikedButton.png);
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+}
+
+.card__name {
   top: 15px;
   margin: 0;
   background-color: #fff;

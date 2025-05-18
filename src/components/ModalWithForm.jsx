@@ -1,4 +1,4 @@
-import "./ModalWithForm.css";
+import "../styles/ModalWithForm.css";
 
 function ModalWithForm({
   children,
@@ -9,6 +9,8 @@ function ModalWithForm({
   onSubmit,
   containerClassName,
   buttonText,
+  secondaryButton,
+  onSecondaryClick,
 }) {
   return (
     <div className={`modal ${activeModal === name && "modal_opened"}`}>
@@ -21,11 +23,22 @@ function ModalWithForm({
         {title && <h2 className="modal__title">{title}</h2>}
         <form onSubmit={onSubmit} className="modal__form" noValidate>
           {children}
-          {buttonText && (
-            <button className="modal__submit-button" type="submit">
-              {buttonText}
-            </button>
-          )}
+          <div className="modal__button-container">
+            {buttonText && (
+              <button className="modal__submit-button" type="submit">
+                {buttonText}
+              </button>
+            )}
+            {secondaryButton && (
+              <button
+                className="modal__secondary-button"
+                type="button"
+                onClick={onSecondaryClick}
+              >
+                {secondaryButton}
+              </button>
+            )}
+          </div>
         </form>
       </div>
     </div>

@@ -1,15 +1,16 @@
-import "./Main.css";
-import WeatherCard from "../WeatherCard/WeatherCard";
-import ItemCard from "../ItemCard/ItemCard";
-import randomizeIcon from "../../assets/randomize.png";
+import "../styles/Main.css";
+import WeatherCard from "./WeatherCard";
+import ItemCard from "./ItemCard";
+import randomizeIcon from "../assets/randomize.png";
 import { useContext } from "react";
-import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
+import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
 
 function Main({
   weatherData,
   handleCardClick,
   isMobileMenuOpened,
   clothingItems,
+  handleCardLike,
 }) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
   return (
@@ -34,6 +35,7 @@ function Main({
                   key={item._id}
                   item={item}
                   onCardClick={handleCardClick}
+                  onLikeClick={handleCardLike}
                 />
               );
             })}

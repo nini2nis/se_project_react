@@ -62,6 +62,26 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid;
+}
+
+.header__signup-btn {
+  border: none;
+  background-color: transparent;
+  height: 24px;
+  padding: 0;
+  align-self: center;
+  margin: 0 0 0 auto;
+}
+
+.header__login-btn {
+  border: none;
+  background-color: transparent;
+  height: 24px;
+  padding: 0;
+  align-self: center;
+  margin: 0 0 0 auto;
 }
 
 @media screen and (max-width: 627px) {
@@ -156,5 +176,9 @@
   .header__user-container_opened {
     visibility: visible;
     align-self: center;
+  }
+
+  .header__login-btn {
+    margin: 0 auto;
   }
 }

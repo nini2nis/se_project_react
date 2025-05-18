@@ -1,5 +1,6 @@
-import "./AddItemModal.css";
-import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import "../styles/ModalWithForm.css";
+import "../styles/AddItemModal.css";
+import ModalWithForm from "./ModalWithForm";
 import { useState, useEffect } from "react";
 
 const AddItemModal = ({
@@ -69,7 +70,7 @@ const AddItemModal = ({
           type="url"
           id="imageURL"
           name="link"
-          placeholder="Type your caption"
+          placeholder="Image URL"
           onChange={handleImageUrlChange}
           value={imageUrl}
           required

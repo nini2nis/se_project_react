@@ -39,7 +39,7 @@
 }
 
 .modal__close-button {
-  background-image: url(../../assets/CloseButton.png);
+  background-image: url(../assets/CloseButton.png);
   background-repeat: no-repeat;
   background-color: transparent;
   border: none;
@@ -123,6 +123,18 @@
   opacity: 30%;
 }
 
+.modal__secondary-button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  opacity: 50%;
+  margin: 0 0 0 12px;
+}
+
+.modal__secondary-button:hover {
+  opacity: 1;
+}
+
 @media screen and (max-width: 627px) {
   .modal__container {
     border-radius: 10px;
@@ -133,7 +145,7 @@
   }
 
   .modal__close-button {
-    background-image: url(../../assets/CloseButtonBlack.png);
+    background-image: url(../assets/CloseButtonBlack.png);
   }
 
   .modal__title {
@@ -146,9 +158,19 @@
     max-width: 343px;
   }
 
+  .modal__button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
   .modal__submit-button {
     height: 44px;
     margin: 30px 0 0;
     width: 100%;
+  }
+
+  .modal__secondary-button {
+    margin: 0;
   }
 }
