@@ -11,7 +11,6 @@ function Profile({
   handleLoginClick,
   handleSignupClick,
   isOwn,
-  currentUser,
   handleEditProfileClick,
   handleCardLike,
 }) {
@@ -29,7 +28,6 @@ function Profile({
         handleCardClick={handleCardClick}
         handleAddClick={handleAddClick}
         isOwn={isOwn}
-        currentUser={currentUser}
         handleCardLike={handleCardLike}
       />
     </div>

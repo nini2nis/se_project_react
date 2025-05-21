@@ -6,7 +6,6 @@ function ClothesSection({
   handleCardClick,
   handleAddClick,
   isOwn,
-  currentUser,
   handleCardLike,
 }) {
   const filteredItems = isOwn
