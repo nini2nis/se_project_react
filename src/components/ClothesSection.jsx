@@ -1,5 +1,7 @@
 import "../styles/ClothesSection.css";
 import ItemCard from "./ItemCard";
+import { useContext } from "react";
+import CurrentUserContext from "../contexts/CurrentUserContext";
 
 function ClothesSection({
   clothingItems,
@@ -8,6 +10,7 @@ function ClothesSection({
   isOwn,
   handleCardLike,
 }) {
+  const currentUser = useContext(CurrentUserContext);
   const filteredItems = isOwn
     ? clothingItems.filter((item) => item.owner === currentUser._id)
     : clothingItems;

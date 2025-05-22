@@ -1,6 +1,5 @@
 import "../styles/ModalWithForm.css";
 import ModalWithForm from "./ModalWithForm";
-import { useState } from "react";
 
 const EditProfileModal = ({
   activeModal,
@@ -9,19 +8,13 @@ const EditProfileModal = ({
   onProfileChangeSubmit,
   profileData,
 }) => {
-  const [data, setData] = useState({
-    name: profileData.name,
-    avatar: profileData.avatar,
-  });
-
-  const handleChange = (evt) => {
-    const { name, value } = evt.target;
-    setData({ ...data, [name]: value });
-  };
-
   const handleProfileChange = (evt) => {
     evt.preventDefault();
-    onProfileChangeSubmit(data);
+    const formData = {
+      name: evt.target.name.value,
+      avatar: evt.target.avatar.value,
+    };
+    onProfileChangeSubmit(formData);
   };
 
   return (
@@ -44,8 +37,7 @@ const EditProfileModal = ({
           placeholder="Name"
           minLength="2"
           maxLength="30"
-          value={data.name}
-          onChange={handleChange}
+          defaultValue={profileData.name}
           required
         />
         <span className="name-error modal__input-error" id="name-error"></span>
@@ -58,8 +50,7 @@ const EditProfileModal = ({
           id="edit-avatar"
           name="avatar"
           placeholder="Avatar URL"
-          value={data.avatar}
-          onChange={handleChange}
+          defaultValue={profileData.avatar}
           required
         />
         <span className="name-error modal__input-error" id="name-error"></span>
