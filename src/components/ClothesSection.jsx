@@ -10,7 +10,8 @@ function ClothesSection({
   isOwn,
   handleCardLike,
 }) {
-  const currentUser = useContext(CurrentUserContext);
+  const { currentUser } = useContext(CurrentUserContext);
+  // const currentUser = useContext(CurrentUserContext);
   const filteredItems = isOwn
     ? clothingItems.filter((item) => item.owner === currentUser._id)
     : clothingItems;

@@ -309,7 +309,6 @@ function App() {
                       isMobileMenuOpened={isMobileMenuOpened}
                       handleLogout={handleLogout}
                       isOwn={isOwn}
-                      currentUser={currentUser}
                       handleEditProfileClick={handleEditProfileClick}
                       handleCardLike={handleCardLike}
                     />
