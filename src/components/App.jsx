@@ -379,3 +379,10 @@ function App() {
 }
 
 export default App;
+
+// If you could place a small text link somewhere on your
+// site to https://freedns.afraid.org/ named "Free DNS"
+// it would be greatly appreciated, to help raise search
+// engine rankings and bring more users to the site,
+// even if you don't think your site gets much traffic
+// it would still help! - Josh

@@ -1,4 +1,7 @@
-export const baseUrl = "http://localhost:3001";
+export const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://api.wtwr.webmakers.ch"
+    : "http://localhost:3001";
 import { _checkResponse } from "./Api";
 const postHeaders = {
   "Content-Type": "application/json",
