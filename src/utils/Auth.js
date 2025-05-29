@@ -34,7 +34,7 @@ export const getUserInfo = (token) => {
   return fetch(`${baseUrl}/users/me`, {
     method: "GET",
     headers: {
-      authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
   }).then(_checkResponse);
 };
@@ -44,7 +44,7 @@ export const changeProfile = (data, token) => {
     method: "PATCH",
     headers: {
       ...postHeaders,
-      authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({ name: data.name, avatar: data.avatar }),
   }).then(_checkResponse);

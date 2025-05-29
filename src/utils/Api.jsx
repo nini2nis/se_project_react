@@ -21,23 +21,18 @@ const api = {
     }).then(_checkResponse);
   },
 
-  addNewItem({ name, weather, imageUrl }) {
+  addNewItem({ name, imageUrl, weather }) {
     const token = localStorage.getItem("jwt");
-    console.log("Token being used:", token);
-    console.log("Full headers:", {
-      ...postHeaders,
-      Authorization: `Bearer ${token}`,
-    });
     return fetch(`${baseUrl}/items`, {
       method: "POST",
       headers: {
-        ...postHeaders,
         Authorization: `Bearer ${token}`,
+        ...postHeaders,
       },
       body: JSON.stringify({
         name,
-        weather,
         imageUrl,
+        weather,
       }),
     }).then(_checkResponse);
   },
@@ -47,7 +42,7 @@ const api = {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,
-        postHeaders,
+        ...postHeaders,
       },
     }).then(_checkResponse);
   },
